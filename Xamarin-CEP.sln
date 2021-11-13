@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31829.152
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin-CEP.Android", "Xamarin-CEP\Xamarin-CEP.Android\Xamarin-CEP.Android.csproj", "{84C6E3E2-48BA-43D9-A47C-3F063BCD9A13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin-CEP", "Xamarin-CEP\Xamarin-CEP\Xamarin-CEP.csproj", "{46030A3E-1697-4DA0-9FD7-92BE9EDA7B25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xamarin_CEP", "Xamarin-CEP\Xamarin-CEP\Xamarin_CEP.csproj", "{46030A3E-1697-4DA0-9FD7-92BE9EDA7B25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
