@@ -10,7 +10,7 @@ namespace Xamarin_CEP.Services
 {
     public class CepAPI
     {
-        const string Url = "viacep.com.br/ws";
+        const string Url = "https://viacep.com.br/ws";
 
         private HttpClient GetClient()
         {
@@ -18,11 +18,11 @@ namespace Xamarin_CEP.Services
             return client;
         }
 
-        public async Task<Cep> GetCep(int cep)
+        public async Task<Cep> GetCep(string cep)
         {
             var client = GetClient();
 
-            var queryString = $"{Url}/{cep}/json";
+            var queryString = $"{Url}/{cep}/json/";
 
             var response = await client.GetAsync(queryString);
 

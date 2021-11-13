@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Xamarin.Forms;
-using Xamarin_CEP.ViewModels;
+﻿using Xamarin.Forms;
 using Xamarin_CEP.Views;
 
 namespace Xamarin_CEP
@@ -13,6 +10,7 @@ namespace Xamarin_CEP
             InitializeComponent();
             Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
             Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
+            Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
         }
 
     }

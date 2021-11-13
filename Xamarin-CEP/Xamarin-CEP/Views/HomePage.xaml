@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Xamarin_CEP.ViewModels"  
+             x:Class="Xamarin_CEP.Views.HomePage">
+    <ContentPage.Content>
+        <StackLayout Padding="25">
+            <Label Text="Digite um CEP" FontSize="Title"/>
+
+            <StackLayout Orientation="Horizontal" Padding="0,0,0,30">
+                <Entry Text="{Binding EntryCep, Mode = TwoWay}" HorizontalOptions="FillAndExpand" Keyboard="Numeric" Placeholder="CEP" MaxLength="8"/>
+                <Button Text="Buscar" Command="{Binding SearchCommand}" />
+            </StackLayout>
+
+            <StackLayout IsVisible="{Binding IsVisible, Mode = TwoWay}" >
+                <Label Text="Endereço:" FontSize="Subtitle"/>
+                <Label Text="{Binding Logradouro, Mode=TwoWay}" Padding="10,0,0,0"/>
+                <Label Text="{Binding Bairro, Mode=TwoWay}" Padding="10,0,0,0"/>
+                <Label Text="{Binding Cidade, Mode=TwoWay}" Padding="10,0,0,0"/>
+                <Button Text="Salvar"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
