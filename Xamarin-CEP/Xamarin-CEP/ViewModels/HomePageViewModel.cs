@@ -51,6 +51,8 @@ namespace Xamarin_CEP.ViewModels
 
         public Command SearchCommand { get; }
 
+        public Command SaveCommand { get; }
+
         public HomePageViewModel()
         {
             api = new CepAPI();
@@ -58,6 +60,7 @@ namespace Xamarin_CEP.ViewModels
             IsVisible = false;
 
             SearchCommand = new Command(ExecuteSearchCommand, ValidateEntry);
+            SaveCommand = new Command(OnSave);
             this.PropertyChanged +=
                 (_, __) => SearchCommand.ChangeCanExecute();
         }
@@ -77,6 +80,19 @@ namespace Xamarin_CEP.ViewModels
             Cidade = response.Localidade;
             Logradouro = response.Logradouro;
 
+        }
+
+        private async void OnSave()
+        {
+            Endereço novoEndereço = new Endereço()
+            {
+                Id = Guid.NewGuid(),
+                Rua = Logradouro,
+                Bairro = Bairro,
+                Cidade = Cidade
+            };
+
+            await EndereçoContext.Add(novoEndereço);
         }
 
     }

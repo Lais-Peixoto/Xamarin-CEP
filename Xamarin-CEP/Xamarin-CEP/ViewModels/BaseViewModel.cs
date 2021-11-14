@@ -14,6 +14,8 @@ namespace Xamarin_CEP.ViewModels
     {
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
 
+        public ApplicationContext EndereçoContext => App.ApplicationContext;
+
         bool isBusy = false;
         public bool IsBusy
         {

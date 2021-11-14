@@ -17,7 +17,7 @@
                 <Label Text="{Binding Logradouro, Mode=TwoWay}" Padding="10,0,0,0"/>
                 <Label Text="{Binding Bairro, Mode=TwoWay}" Padding="10,0,0,0"/>
                 <Label Text="{Binding Cidade, Mode=TwoWay}" Padding="10,0,0,0"/>
-                <Button Text="Salvar"/>
+                <Button Text="Salvar" Command="{Binding SaveCommand}" />
             </StackLayout>
 
         </StackLayout>
