@@ -14,16 +14,17 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="25, 30, 0, 0" x:DataType="model:Endereço">
-                        <Label Text="{Binding Rua}" 
+                        <Label Text="{Binding CEP}" 
                             LineBreakMode="NoWrap" 
                             FontSize="16" />
-                        <Label Text="{Binding Bairro}" 
-                            LineBreakMode="NoWrap"
-                            FontSize="13" />
-                        <Label Text="{Binding Cidade}" 
-                            LineBreakMode="NoWrap"
-                            FontSize="13" />
                         <BoxView HeightRequest="1" Color="LightGray" Margin ="0, 15, 50, 0"  IsVisible="True"/>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                NumberOfTapsRequired="1"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:ListPageViewModel}}, Path=EndereçoSelecionado}"		
+                                CommandParameter="{Binding .}">
+                            </TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
