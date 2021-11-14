@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -49,14 +50,33 @@ namespace Xamarin_CEP.Models
                         Id = Guid.NewGuid(),
                         Rua = "Rua do Ouvidor",
                         Bairro = "Centro",
-                        Cidade = "Rio de Janeiro"
+                        Cidade = "Rio de Janeiro",
+                        CEP = "20040030"
+                    },
+                    new Endereço
+                    {
+                        Id = Guid.NewGuid(),
+                        Rua = "Rua Gonçalves Dias",
+                        Bairro = "Centro",
+                        Cidade = "Rio de Janeiro",
+                        CEP = "20050030"
                     }
                 );
         }
 
         public async Task<IEnumerable<Endereço>> List(bool forceRefresh = false)
         {
-            return await Endereço.ToListAsync().ConfigureAwait(false);
+            return await Endereço
+                .OrderByDescending(l => l.CEP)
+                .ToListAsync()
+                .ConfigureAwait(false);
+        }
+
+        public async Task<Endereço> Get(string cep)
+        {
+            var endereços = await Endereço.ToListAsync().ConfigureAwait(false);
+
+            return await Task.FromResult(endereços.FirstOrDefault(l => l.CEP == cep));
         }
 
         public async Task<bool> Add(Endereço endereço)

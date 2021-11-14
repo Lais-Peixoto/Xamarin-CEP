@@ -50,7 +50,6 @@ namespace Xamarin_CEP.ViewModels
         }
 
         public Command SearchCommand { get; }
-
         public Command SaveCommand { get; }
 
         public HomePageViewModel()
@@ -89,10 +88,12 @@ namespace Xamarin_CEP.ViewModels
                 Id = Guid.NewGuid(),
                 Rua = Logradouro,
                 Bairro = Bairro,
-                Cidade = Cidade
+                Cidade = Cidade,
+                CEP = EntryCep
             };
 
             await EndereçoContext.Add(novoEndereço);
+
         }
 
     }
