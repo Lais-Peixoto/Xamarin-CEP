@@ -6,15 +6,15 @@ using Xamarin_CEP.ViewModels;
 namespace Xamarin_CEP.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ListPage : ContentPage
+    public partial class MapaPage : ContentPage
     {
-        ListPageViewModel viewModel;
+        MapaPageViewModel viewModel;
 
-        public ListPage()
+        public MapaPage()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ListPageViewModel();
+            BindingContext = viewModel = new MapaPageViewModel();
         }
 
         protected override void OnAppearing()

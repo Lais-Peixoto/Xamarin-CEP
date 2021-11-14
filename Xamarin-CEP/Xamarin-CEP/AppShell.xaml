@@ -34,6 +34,7 @@
         <ShellContent Title="Browse" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ItemsPage}" />
         <ShellContent Title="Busca" ContentTemplate="{DataTemplate local:HomePage}"/>
         <ShellContent Title="Lista" ContentTemplate="{DataTemplate local:ListPage}"/>
+        <ShellContent Title="Mapa" ContentTemplate="{DataTemplate local:MapaPage}"/>
     </TabBar>
 
     <!--

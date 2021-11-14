@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_CEP.Views.MapaPage"
+              xmlns:local="clr-namespace:Xamarin_CEP.ViewModels"
+             xmlns:model="clr-namespace:Xamarin_CEP.Models"  
+             Title="Mapa">
+    <RefreshView x:DataType="local:MapaPageViewModel" Command="{Binding LoadEndereçosCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+        <StackLayout >
+            <ListView >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </RefreshView>
+</ContentPage>
