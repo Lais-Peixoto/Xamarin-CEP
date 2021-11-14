@@ -1,9 +1,9 @@
-﻿using System;
-
+﻿
 using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
 using Android.OS;
+using Android.Runtime;
+using System.IO;
 
 namespace Xamarin_CEP.Droid
 {
@@ -16,7 +16,11 @@ namespace Xamarin_CEP.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+            //var dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments), "database.sqlite");
+            var dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments), "databas2.sqlite");
+            //var connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=XamarinCepDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+
+            LoadApplication(new App(dbPath));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
