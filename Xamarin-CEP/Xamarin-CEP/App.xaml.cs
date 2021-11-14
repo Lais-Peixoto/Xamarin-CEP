@@ -1,10 +1,6 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 using Xamarin_CEP.Models;
-using Xamarin_CEP.Services;
-using Xamarin_CEP.Views;
 
 namespace Xamarin_CEP
 {
@@ -20,7 +16,6 @@ namespace Xamarin_CEP
 
             ApplicationContext = new ApplicationContext(dbPath);
 
-            DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 

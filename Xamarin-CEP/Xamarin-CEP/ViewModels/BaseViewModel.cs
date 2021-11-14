@@ -3,16 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-using Xamarin.Forms;
-
 using Xamarin_CEP.Models;
-using Xamarin_CEP.Services;
 
 namespace Xamarin_CEP.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
 
         public ApplicationContext EndereçoContext => App.ApplicationContext;
 
